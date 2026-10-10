@@ -1,0 +1,319 @@
+{
+  "runner": "Newman 6.2.3",
+  "stats": {
+    "iterations": {
+      "total": 1,
+      "pending": 0,
+      "failed": 0
+    },
+    "items": {
+      "total": 14,
+      "pending": 0,
+      "failed": 0
+    },
+    "scripts": {
+      "total": 14,
+      "pending": 0,
+      "failed": 0
+    },
+    "prerequests": {
+      "total": 14,
+      "pending": 0,
+      "failed": 0
+    },
+    "requests": {
+      "total": 14,
+      "pending": 0,
+      "failed": 0
+    },
+    "tests": {
+      "total": 14,
+      "pending": 0,
+      "failed": 0
+    },
+    "assertions": {
+      "total": 42,
+      "pending": 0,
+      "failed": 0
+    },
+    "testScripts": {
+      "total": 14,
+      "pending": 0,
+      "failed": 0
+    },
+    "prerequestScripts": {
+      "total": 0,
+      "pending": 0,
+      "failed": 0
+    }
+  },
+  "failures": [],
+  "executions": [
+    {
+      "name": "01 - Create opportunity 1",
+      "method": "POST",
+      "status_code": 201,
+      "assertions": [
+        {
+          "name": "HTTP 201",
+          "passed": true
+        },
+        {
+          "name": "JSON response",
+          "passed": true
+        },
+        {
+          "name": "Generated ID and saved fields",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "name": "02 - Create opportunity 2",
+      "method": "POST",
+      "status_code": 201,
+      "assertions": [
+        {
+          "name": "HTTP 201",
+          "passed": true
+        },
+        {
+          "name": "JSON response",
+          "passed": true
+        },
+        {
+          "name": "Generated ID and saved fields",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "name": "03 - Create opportunity 3",
+      "method": "POST",
+      "status_code": 201,
+      "assertions": [
+        {
+          "name": "HTTP 201",
+          "passed": true
+        },
+        {
+          "name": "JSON response",
+          "passed": true
+        },
+        {
+          "name": "Generated ID and saved fields",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "name": "04 - Retrieve all opportunities",
+      "method": "GET",
+      "status_code": 200,
+      "assertions": [
+        {
+          "name": "HTTP 200",
+          "passed": true
+        },
+        {
+          "name": "JSON response",
+          "passed": true
+        },
+        {
+          "name": "Database array includes all three",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "name": "05 - Retrieve one by ID",
+      "method": "GET",
+      "status_code": 200,
+      "assertions": [
+        {
+          "name": "HTTP 200",
+          "passed": true
+        },
+        {
+          "name": "JSON response",
+          "passed": true
+        },
+        {
+          "name": "Full details and matching ID",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "name": "06 - Update opportunity",
+      "method": "PUT",
+      "status_code": 200,
+      "assertions": [
+        {
+          "name": "HTTP 200",
+          "passed": true
+        },
+        {
+          "name": "JSON response",
+          "passed": true
+        },
+        {
+          "name": "Saved updates",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "name": "07 - Close opportunity",
+      "method": "PUT",
+      "status_code": 200,
+      "assertions": [
+        {
+          "name": "HTTP 200",
+          "passed": true
+        },
+        {
+          "name": "JSON response",
+          "passed": true
+        },
+        {
+          "name": "Closed status",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "name": "08 - Delete opportunity",
+      "method": "DELETE",
+      "status_code": 200,
+      "assertions": [
+        {
+          "name": "HTTP 200",
+          "passed": true
+        },
+        {
+          "name": "JSON response",
+          "passed": true
+        },
+        {
+          "name": "Deleted matching ID",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "name": "09 - Request deleted opportunity (404)",
+      "method": "GET",
+      "status_code": 404,
+      "assertions": [
+        {
+          "name": "HTTP 404",
+          "passed": true
+        },
+        {
+          "name": "JSON response",
+          "passed": true
+        },
+        {
+          "name": "Not found message",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "name": "10 - Missing required fields (400)",
+      "method": "POST",
+      "status_code": 400,
+      "assertions": [
+        {
+          "name": "HTTP 400",
+          "passed": true
+        },
+        {
+          "name": "JSON response",
+          "passed": true
+        },
+        {
+          "name": "Validation message",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "name": "11 - Negative positions (400)",
+      "method": "POST",
+      "status_code": 400,
+      "assertions": [
+        {
+          "name": "HTTP 400",
+          "passed": true
+        },
+        {
+          "name": "JSON response",
+          "passed": true
+        },
+        {
+          "name": "Error field",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "name": "12 - Invalid date (400)",
+      "method": "POST",
+      "status_code": 400,
+      "assertions": [
+        {
+          "name": "HTTP 400",
+          "passed": true
+        },
+        {
+          "name": "JSON response",
+          "passed": true
+        },
+        {
+          "name": "Error field",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "name": "13 - Invalid status (400)",
+      "method": "POST",
+      "status_code": 400,
+      "assertions": [
+        {
+          "name": "HTTP 400",
+          "passed": true
+        },
+        {
+          "name": "JSON response",
+          "passed": true
+        },
+        {
+          "name": "Error field",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "name": "14 - Malformed JSON (400)",
+      "method": "POST",
+      "status_code": 400,
+      "assertions": [
+        {
+          "name": "HTTP 400",
+          "passed": true
+        },
+        {
+          "name": "JSON response",
+          "passed": true
+        },
+        {
+          "name": "Safe invalid JSON",
+          "passed": true
+        }
+      ]
+    }
+  ]
+}

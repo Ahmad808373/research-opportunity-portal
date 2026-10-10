@@ -1,0 +1,7 @@
+{
+  "check": "Persisted row read after actual MySQL process stop and restart",
+  "status": "passed",
+  "mysql": "8.0.46",
+  "record_id": 1,
+  "title": "Disk persistence test"
+}
