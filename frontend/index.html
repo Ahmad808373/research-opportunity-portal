@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>University Research Opportunity Portal</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <script src="/static/script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand"><span class="brand-mark" aria-hidden="true">R</span><div><strong>Research Portal</strong><span>University research opportunities</span></div></div>
+    <span class="header-label">Faculty workspace</span>
+  </header>
+  <main>
+    <div class="page-heading">
+      <div><p class="eyebrow">CONNECT IDEAS. CREATE OPPORTUNITIES.</p><h1>University Research<br>Opportunity Portal</h1><p class="subtitle">A shared place to publish and manage faculty research openings.</p></div>
+      <button id="add-button" class="primary" data-mutate>+ Add Opportunity</button>
+    </div>
+    <div id="message" class="message" role="status" aria-live="polite" hidden></div>
+    <section class="workspace" aria-label="Research opportunity management">
+      <div class="list-panel">
+        <div class="section-heading"><div><h2>Research opportunities</h2><p id="list-count">Loading opportunities...</p></div><button id="refresh-button" class="quiet">Refresh</button></div>
+        <div id="opportunity-list" class="opportunity-list" aria-live="polite"><p class="empty">Connecting to the server...</p></div>
+      </div>
+      <aside class="detail-panel" aria-labelledby="details-heading">
+        <div class="section-heading"><h2 id="details-heading">Opportunity details</h2><span class="small-label">FULL RECORD</span></div>
+        <div id="detail-content"><div class="detail-empty"><span class="empty-symbol" aria-hidden="true">↗</span><h3>A closer look</h3><p>Select an opportunity to view its full details and manage the opening.</p></div></div>
+      </aside>
+    </section>
+    <p class="footer-note">Faculty opportunity management · Computer Networks Assignment 01</p>
+  </main>
+
+  <dialog id="form-dialog" aria-labelledby="form-heading">
+    <div class="dialog-heading"><div><p class="eyebrow">RESEARCH OPENING</p><h2 id="form-heading">Add Opportunity</h2></div><button id="dialog-close" class="quiet" type="button" aria-label="Close form">✕</button></div>
+    <form id="opportunity-form">
+      <p class="form-note">All fields are required. Positions may be zero.</p>
+      <label for="title">Research title</label><input id="title" name="title" required maxlength="200">
+      <label for="description">Research description</label><textarea id="description" name="description" required maxlength="10000" rows="3"></textarea>
+      <div class="form-grid">
+        <div><label for="research_area">Research area</label><input id="research_area" name="research_area" required maxlength="150"></div>
+        <div><label for="faculty_name">Faculty member's name</label><input id="faculty_name" name="faculty_name" required maxlength="150"></div>
+      </div>
+      <label for="department">Department</label><input id="department" name="department" required maxlength="150">
+      <label for="required_skills">Required skills</label><textarea id="required_skills" name="required_skills" required maxlength="10000" rows="2"></textarea>
+      <div class="form-grid">
+        <div><label for="available_positions">Available positions</label><input id="available_positions" name="available_positions" type="number" min="0" max="2147483647" step="1" required></div>
+        <div><label for="application_deadline">Application deadline</label><input id="application_deadline" name="application_deadline" type="date" min="1000-01-01" max="9999-12-31" required></div>
+      </div>
+      <label for="status">Status</label><select id="status" name="status" required><option value="Open">Open</option><option value="Closed">Closed</option></select>
+      <p id="form-error" class="form-error" role="alert" hidden></p>
+      <div class="form-actions"><button id="cancel-button" class="quiet" type="button">Cancel</button><button id="save-button" class="primary" type="submit" data-mutate>Save Opportunity</button></div>
+    </form>
+  </dialog>
+</body>
+</html>
