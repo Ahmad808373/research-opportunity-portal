@@ -19,10 +19,10 @@ executions, not expected-result examples. Evidence files are in `test-evidence/`
 
 | Test group | Executed outcome | Evidence |
 |---|---|---|
-| Python live HTTP/MySQL regression suite | 13 test methods passed; subtests cover many invalid inputs | api-tests.log |
+| Python live HTTP/MySQL regression suite | 13 test methods passed; subtests cover many invalid inputs | api-tests.txt |
 | Exported Postman collection | 14 requests, 42 assertions, 0 failures | postman-results-summary.json |
-| Browser regression suite | 16 named checks passed; no uncaught JavaScript errors | frontend-tests.log, frontend-results.json |
-| Persistence after Flask restart | Created record retrieved unchanged after actual Flask stop/start | test_persistence_after_flask_restart in api-tests.log |
+| Browser regression suite | 16 named checks passed; no uncaught JavaScript errors | frontend-tests.txt, frontend-results.json |
+| Persistence after Flask restart | Created record retrieved unchanged after actual Flask stop/start | test_persistence_after_flask_restart in api-tests.txt |
 | Persistence after MySQL restart | Committed row retrieved after actual MySQL stop/start | database-persistence.json |
 | Desktop/mobile appearance | Real browser screenshots inspected; final mobile spacing corrected | desktop.png, mobile.png |
 

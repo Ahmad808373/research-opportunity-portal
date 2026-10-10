@@ -1,0 +1,18 @@
+test_complete_crud (test_api.PortalAPITests.test_complete_crud) ... ok
+test_database_constraints (test_api.PortalAPITests.test_database_constraints) ... ok
+test_empty_database (test_api.PortalAPITests.test_empty_database) ... ok
+test_invalid_dates_and_status (test_api.PortalAPITests.test_invalid_dates_and_status) ... ok
+test_invalid_json_and_unknown_fields (test_api.PortalAPITests.test_invalid_json_and_unknown_fields) ... ok
+test_invalid_positions (test_api.PortalAPITests.test_invalid_positions) ... ok
+test_invalid_update_does_not_change_record (test_api.PortalAPITests.test_invalid_update_does_not_change_record) ... ok
+test_missing_and_invalid_ids (test_api.PortalAPITests.test_missing_and_invalid_ids) ... ok
+test_persistence_after_flask_restart (test_api.PortalAPITests.test_persistence_after_flask_restart) ... ok
+test_repeated_requests (test_api.PortalAPITests.test_repeated_requests) ... ok
+test_required_fields (test_api.PortalAPITests.test_required_fields) ... ok
+test_safe_database_failure (test_api.PortalAPITests.test_safe_database_failure) ... ok
+test_sql_text_is_data (test_api.PortalAPITests.test_sql_text_is_data) ... ok
+
+----------------------------------------------------------------------
+Ran 13 tests in 1.919s
+
+OK

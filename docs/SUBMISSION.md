@@ -8,7 +8,8 @@ the final personal assignment ZIP.
 ## Missing items that must be completed
 
 1. Confirm the published project remains accessible to the instructor at the
-   actual GitHub URL. Milestone publishing is being finalized in this package.
+   actual GitHub URL. Source and meaningful milestone commits are now published
+   and verified.
 2. Run the project on your Windows computer and demonstrate the imported collection
    in Postman desktop. The same collection has already passed in Newman here.
 3. Record the real demonstration using DEMO_PLAN.md; verify duration <=60 seconds.

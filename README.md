@@ -6,10 +6,10 @@ stored in MySQL. There is no login, student application system, or analytics.
 
 GitHub: https://github.com/Ahmad808373/research-opportunity-portal
 
-**Publishing status:** GitHub write access was verified after the connection
-permissions were corrected. Database, backend, frontend, and API integration
-milestones have been published and verified. Testing/documentation publication
-and the final file check are in progress; see docs/VERIFICATION.md.
+**Publishing status:** actual GitHub branch/file write access is verified.
+Database, backend, frontend, API integration, testing, and documentation milestones
+were published separately, and each remote commit was read back. The public
+repository contains the complete source; see docs/GITHUB_COMMITS.json.
 
 ## Features and technologies
 
@@ -217,7 +217,7 @@ See [test report](docs/TEST_REPORT.md). Postman desktop GUI and Windows installa
 were not executed here; complete them locally. Application tests ran on Linux.
 
 Optional Python suite: it clears its target table and refuses DB_NAME values that
- do not end in `_test`. Never target your main database. In a separate Workbench
+do not end in `_test`. Never target your main database. In a separate Workbench
 query tab, create research_portal_test by copying schema.sql and changing both
 research_portal occurrences to research_portal_test. Grant your local app user
 SELECT, INSERT, UPDATE, DELETE on research_portal_test.* as well. In a separate
@@ -265,5 +265,5 @@ and live database records are not packaged. MySQL stores data separately from Fl
 
 Read [the learning guide](docs/LEARNING_GUIDE.md), follow [the recording plan](docs/DEMO_PLAN.md),
 and check [submission instructions](docs/SUBMISSION.md). The working package is
-**not the final named submission**: source publication, local Postman GUI demonstration,
+**not the final named submission**: local Windows/Postman GUI demonstration,
 exact personal filename details, and a real recording remain pending.

@@ -1,0 +1,86 @@
+{
+  "repository": "https://github.com/Ahmad808373/research-opportunity-portal",
+  "permission_check_commit": "af9b1bbda89173baaa40d23aab7e7643565d04fd",
+  "milestones": [
+    {
+      "message": "chore: initialize assignment structure and requirements checklist",
+      "sha": "0a3d61d9c5aa09c661bd0aeb42bd67a4e980cf7d",
+      "branches": [
+        "main",
+        "development"
+      ],
+      "verified": true
+    },
+    {
+      "message": "feat: add MySQL schema constraints and request database connection",
+      "sha": "047cf7b84139d5a24b5d3a91b470a541cebec6d0",
+      "branches": [
+        "main",
+        "development"
+      ],
+      "verified": true
+    },
+    {
+      "message": "feat: implement five Flask CRUD endpoints with validated JSON and safe errors",
+      "sha": "3316233a15aa18f4f91f95ace6bdd6a55ac34428",
+      "branches": [
+        "main",
+        "development"
+      ],
+      "verified": true
+    },
+    {
+      "message": "feat: build responsive opportunity list details and accessible form interface",
+      "sha": "b1781b1a1b8f2ac962f5e134ae01de5ae39e63b0",
+      "branches": [
+        "main",
+        "development"
+      ],
+      "verified": true
+    },
+    {
+      "message": "feat: integrate frontend fetch CRUD close workflow and user feedback",
+      "sha": "6a209d24579e71c347f01888521c3fe04652aa99",
+      "branches": [
+        "main",
+        "development"
+      ],
+      "verified": true
+    },
+    {
+      "message": "fix: preserve heading spacing on mobile and format stylesheet for readability",
+      "sha": "5338c1dfbcafbae372a9bd308084c57f6cf99858",
+      "branches": [
+        "main",
+        "development"
+      ],
+      "verified": true
+    },
+    {
+      "message": "test: add verified live MySQL browser and Postman CRUD regression coverage",
+      "sha": "01d0125304bac3517379de3a4e1fc081fb3cb9fd",
+      "branches": [
+        "main",
+        "development"
+      ],
+      "verified": true
+    },
+    {
+      "message": "test: verify frontend deadlines database restart and retain executed evidence",
+      "sha": "e52ab5e81e0b4958f1ae44f96114f18cc988d2bd",
+      "branches": [
+        "main"
+      ],
+      "verified": true
+    },
+    {
+      "message": "docs: explain Windows setup project internals video plan and submission checklist",
+      "sha": "79cca366d41a6dd8a17fc13533b8f92dbaa0ea94",
+      "branches": [
+        "main"
+      ],
+      "verified": true
+    }
+  ],
+  "notes": "Each listed milestone was individually published and its remote head read back. Subsequent final verification commits are visible in GitHub history."
+}

@@ -9,7 +9,8 @@ and write-check commit af9b1bbda89173baaa40d23aab7e7643565d04fd were read back.
 The verification file is docs/github-write-check.txt. No credentials were uploaded.
 
 Milestones are published individually and verified by reading the actual remote
-branch head. Both main and development receive the same commit. The original
+branch head. The source milestones were checked on main; development is synchronized at
+final review. The original
 GitHub initial commit is preserved. Previously blocked local commits are published
 in their original milestone order; they were not claimed as pushed while access failed.
 The verified source commit log is in GITHUB_COMMITS.json once publication finishes.

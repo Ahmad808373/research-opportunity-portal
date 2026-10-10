@@ -60,7 +60,7 @@ instructions. Status meanings: **Verified** = executed or directly confirmed;
 | Actual branch/file/commit write access | Verified | development branch; af9b1bb write-check commit read back |
 | Database/backend/frontend/API/testing milestones | Verified | Each remote head confirmed on main and development |
 | Backend, frontend, schema, Postman files online | Verified | Published source trees and verified remote commits |
-| Complete README/documentation online | Pending | Documentation publication and final file readback in progress |
+| Complete README/documentation online | Verified | Documentation commit 79cca366 published; README and required paths read back |
 | No credentials exposed | Verified | Tracked source review; placeholder .env.example; ignored .env/.venv |
 | Actual repository URL in README/submission | Verified | README and GITHUB_LINK.txt contain existing repository URL |
 | Instructor access at submission time | Pending | Public now; confirm still accessible when submitting |
@@ -103,7 +103,7 @@ locally and then published separately in order. See GITHUB.md and GITHUB_COMMITS
 | Video/video link included | Pending | Await actual recording/link |
 | Exact P24 0000 NAME CLASS.zip filename | Pending | Need exact registration number, submission name, and class |
 | Final single submission ZIP | Pending | Working package only until video/naming/local demonstration complete |
-| No .env, virtual environments, tokens, unnecessary temporary files in package | Pending | Final package inspection still in progress |
+| No .env, virtual environments, tokens, unnecessary temporary files in working package | Verified | Actual archive inspected; final named submission still pending |
 | Both frontend/backend and database CRUD | Verified | Full end-to-end executions |
 | Run using README on another Windows computer | Implemented but not tested | Exact-file Windows instructions; local install pending |
 | Individual assignment and originality | Pending | Student must understand/adapt the work and follow university assistance policy |

@@ -1,0 +1,17 @@
+Frontend checks passed: 16
+PASS Empty database displayed from API
+PASS Empty required form prevented before POST
+PASS Negative positions blocked in frontend
+PASS Impossible deadline rejected by date input and required validation
+PASS Whitespace-only required field blocked
+PASS Create saved through API/MySQL; repeated submits made one POST
+PASS Single-record GET, full details, and safe HTML-like text
+PASS Edit updated stored record; zero positions accepted
+PASS Close PUT stored and displayed Closed
+PASS Reload retrieved persistent edited/closed record
+PASS 390px mobile layout without horizontal overflow
+PASS Delete cancellation retained database record
+PASS Confirmed DELETE removed record and refreshed empty list
+PASS Actual stopped backend produced understandable frontend network error
+PASS Failed save retained form data and displayed error inside dialog
+PASS No uncaught browser JavaScript errors
