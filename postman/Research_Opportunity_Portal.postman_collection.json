@@ -1,0 +1,509 @@
+{
+  "info": {
+    "name": "University Research Opportunity Portal",
+    "description": "Run requests 01-14 in order against a running Flask/MySQL application. 01-10 cover all eight mandatory PDF scenarios. Creates three records, deletes the first, and deliberately retains two for your UI/video demonstration. Reruns create three new records and use newly returned IDs. No credentials are included. Error 500 is tested by the Python suite; to show it in Postman, stop MySQL and resend request 04, then restart MySQL.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://127.0.0.1:5000"
+    },
+    {
+      "key": "opportunity_1_id",
+      "value": ""
+    },
+    {
+      "key": "opportunity_2_id",
+      "value": ""
+    },
+    {
+      "key": "opportunity_3_id",
+      "value": ""
+    }
+  ],
+  "item": [
+    {
+      "name": "01 - Create opportunity 1",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{base_url}}/api/opportunities",
+        "description": "\nExpected HTTP 201. Expected JSON: {\"message\": \"Opportunity created.\", \"opportunity\": {\"title\": \"Network Traffic Analysis\", \"description\": \"Analyze university network congestion using captured traffic.\", \"research_area\": \"Computer Networks\", \"faculty_name\": \"Dr. Example Faculty\", \"department\": \"Computer Science\", \"required_skills\": \"Python, TCP/IP, Wireshark\", \"available_positions\": 2, \"application_deadline\": \"2026-12-20\", \"status\": \"Open\", \"id\": 1}}",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"Network Traffic Analysis\",\n  \"description\": \"Analyze university network congestion using captured traffic.\",\n  \"research_area\": \"Computer Networks\",\n  \"faculty_name\": \"Dr. Example Faculty\",\n  \"department\": \"Computer Science\",\n  \"required_skills\": \"Python, TCP/IP, Wireshark\",\n  \"available_positions\": 2,\n  \"application_deadline\": \"2026-12-20\",\n  \"status\": \"Open\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"HTTP 201\", function () { pm.response.to.have.status(201); });",
+              "pm.test(\"JSON response\", function () { pm.response.to.be.json; });",
+              "pm.test(\"Generated ID and saved fields\", function () { const row=pm.response.json().opportunity; pm.expect(row.id).to.be.a(\"number\"); pm.expect(row.title).to.eql(\"Network Traffic Analysis\"); pm.expect(row.status).to.eql(\"Open\"); pm.collectionVariables.set(\"opportunity_1_id\", row.id); });"
+            ]
+          }
+        }
+      ],
+      "response": []
+    },
+    {
+      "name": "02 - Create opportunity 2",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{base_url}}/api/opportunities",
+        "description": "\nExpected HTTP 201. Expected JSON: {\"message\": \"Opportunity created.\", \"opportunity\": {\"title\": \"Accessible Campus Interfaces\", \"description\": \"Analyze university network congestion using captured traffic.\", \"research_area\": \"Human Computer Interaction\", \"faculty_name\": \"Dr. Example Faculty\", \"department\": \"Computer Science\", \"required_skills\": \"HTML, CSS, usability testing\", \"available_positions\": 2, \"application_deadline\": \"2026-12-20\", \"status\": \"Open\", \"id\": 1}}",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"Accessible Campus Interfaces\",\n  \"description\": \"Analyze university network congestion using captured traffic.\",\n  \"research_area\": \"Human Computer Interaction\",\n  \"faculty_name\": \"Dr. Example Faculty\",\n  \"department\": \"Computer Science\",\n  \"required_skills\": \"HTML, CSS, usability testing\",\n  \"available_positions\": 2,\n  \"application_deadline\": \"2026-12-20\",\n  \"status\": \"Open\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"HTTP 201\", function () { pm.response.to.have.status(201); });",
+              "pm.test(\"JSON response\", function () { pm.response.to.be.json; });",
+              "pm.test(\"Generated ID and saved fields\", function () { const row=pm.response.json().opportunity; pm.expect(row.id).to.be.a(\"number\"); pm.expect(row.title).to.eql(\"Accessible Campus Interfaces\"); pm.expect(row.status).to.eql(\"Open\"); pm.collectionVariables.set(\"opportunity_2_id\", row.id); });"
+            ]
+          }
+        }
+      ],
+      "response": []
+    },
+    {
+      "name": "03 - Create opportunity 3",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{base_url}}/api/opportunities",
+        "description": "\nExpected HTTP 201. Expected JSON: {\"message\": \"Opportunity created.\", \"opportunity\": {\"title\": \"SMS Spam Classification\", \"description\": \"Analyze university network congestion using captured traffic.\", \"research_area\": \"Machine Learning\", \"faculty_name\": \"Dr. Example Faculty\", \"department\": \"Computer Science\", \"required_skills\": \"Python, text preprocessing\", \"available_positions\": 2, \"application_deadline\": \"2026-12-20\", \"status\": \"Open\", \"id\": 1}}",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"SMS Spam Classification\",\n  \"description\": \"Analyze university network congestion using captured traffic.\",\n  \"research_area\": \"Machine Learning\",\n  \"faculty_name\": \"Dr. Example Faculty\",\n  \"department\": \"Computer Science\",\n  \"required_skills\": \"Python, text preprocessing\",\n  \"available_positions\": 2,\n  \"application_deadline\": \"2026-12-20\",\n  \"status\": \"Open\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"HTTP 201\", function () { pm.response.to.have.status(201); });",
+              "pm.test(\"JSON response\", function () { pm.response.to.be.json; });",
+              "pm.test(\"Generated ID and saved fields\", function () { const row=pm.response.json().opportunity; pm.expect(row.id).to.be.a(\"number\"); pm.expect(row.title).to.eql(\"SMS Spam Classification\"); pm.expect(row.status).to.eql(\"Open\"); pm.collectionVariables.set(\"opportunity_3_id\", row.id); });"
+            ]
+          }
+        }
+      ],
+      "response": []
+    },
+    {
+      "name": "04 - Retrieve all opportunities",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{base_url}}/api/opportunities",
+        "description": "\nExpected HTTP 200. Expected JSON: [{\"title\": \"Network Traffic Analysis\", \"description\": \"Analyze university network congestion using captured traffic.\", \"research_area\": \"Computer Networks\", \"faculty_name\": \"Dr. Example Faculty\", \"department\": \"Computer Science\", \"required_skills\": \"Python, TCP/IP, Wireshark\", \"available_positions\": 2, \"application_deadline\": \"2026-12-20\", \"status\": \"Open\", \"id\": 1}]"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"HTTP 200\", function () { pm.response.to.have.status(200); });",
+              "pm.test(\"JSON response\", function () { pm.response.to.be.json; });",
+              "pm.test(\"Database array includes all three\", function () { const rows=pm.response.json(); pm.expect(rows).to.be.an(\"array\"); [1,2,3].forEach(function (i) { const id=Number(pm.collectionVariables.get(\"opportunity_\"+i+\"_id\")); pm.expect(rows.some(function (r) { return r.id===id; })).to.eql(true); }); });"
+            ]
+          }
+        }
+      ],
+      "response": []
+    },
+    {
+      "name": "05 - Retrieve one by ID",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{base_url}}/api/opportunities/{{opportunity_1_id}}",
+        "description": "\nExpected HTTP 200. Expected JSON: {\"title\": \"Network Traffic Analysis\", \"description\": \"Analyze university network congestion using captured traffic.\", \"research_area\": \"Computer Networks\", \"faculty_name\": \"Dr. Example Faculty\", \"department\": \"Computer Science\", \"required_skills\": \"Python, TCP/IP, Wireshark\", \"available_positions\": 2, \"application_deadline\": \"2026-12-20\", \"status\": \"Open\", \"id\": 1}"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"HTTP 200\", function () { pm.response.to.have.status(200); });",
+              "pm.test(\"JSON response\", function () { pm.response.to.be.json; });",
+              "pm.test(\"Full details and matching ID\", function () { const row=pm.response.json(); pm.expect(row.id).to.eql(Number(pm.collectionVariables.get(\"opportunity_1_id\"))); [\"title\",\"description\",\"research_area\",\"faculty_name\",\"department\",\"required_skills\",\"available_positions\",\"application_deadline\",\"status\"].forEach(k=>pm.expect(row).to.have.property(k)); });"
+            ]
+          }
+        }
+      ],
+      "response": []
+    },
+    {
+      "name": "06 - Update opportunity",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{base_url}}/api/opportunities/{{opportunity_1_id}}",
+        "description": "\nExpected HTTP 200. Expected JSON: {\"message\": \"Opportunity updated.\", \"opportunity\": {\"title\": \"Updated Network Traffic Analysis\", \"description\": \"Analyze university network congestion using captured traffic.\", \"research_area\": \"Computer Networks\", \"faculty_name\": \"Dr. Example Faculty\", \"department\": \"Computer Science\", \"required_skills\": \"Python, TCP/IP, SQL\", \"available_positions\": 3, \"application_deadline\": \"2026-12-20\", \"status\": \"Open\", \"id\": 1}}",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"Updated Network Traffic Analysis\",\n  \"available_positions\": 3,\n  \"required_skills\": \"Python, TCP/IP, SQL\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"HTTP 200\", function () { pm.response.to.have.status(200); });",
+              "pm.test(\"JSON response\", function () { pm.response.to.be.json; });",
+              "pm.test(\"Saved updates\", function () { const row=pm.response.json().opportunity; pm.expect(row.title).to.eql(\"Updated Network Traffic Analysis\"); pm.expect(row.available_positions).to.eql(3); pm.expect(row.required_skills).to.eql(\"Python, TCP/IP, SQL\"); });"
+            ]
+          }
+        }
+      ],
+      "response": []
+    },
+    {
+      "name": "07 - Close opportunity",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{base_url}}/api/opportunities/{{opportunity_1_id}}",
+        "description": "\nExpected HTTP 200. Expected JSON: {\"message\": \"Opportunity updated.\", \"opportunity\": {\"title\": \"Network Traffic Analysis\", \"description\": \"Analyze university network congestion using captured traffic.\", \"research_area\": \"Computer Networks\", \"faculty_name\": \"Dr. Example Faculty\", \"department\": \"Computer Science\", \"required_skills\": \"Python, TCP/IP, Wireshark\", \"available_positions\": 2, \"application_deadline\": \"2026-12-20\", \"status\": \"Closed\", \"id\": 1}}",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"status\": \"Closed\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"HTTP 200\", function () { pm.response.to.have.status(200); });",
+              "pm.test(\"JSON response\", function () { pm.response.to.be.json; });",
+              "pm.test(\"Closed status\", function () { pm.expect(pm.response.json().opportunity.status).to.eql(\"Closed\"); });"
+            ]
+          }
+        }
+      ],
+      "response": []
+    },
+    {
+      "name": "08 - Delete opportunity",
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{base_url}}/api/opportunities/{{opportunity_1_id}}",
+        "description": "\nExpected HTTP 200. Expected JSON: {\"message\": \"Opportunity deleted.\", \"id\": 1}"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"HTTP 200\", function () { pm.response.to.have.status(200); });",
+              "pm.test(\"JSON response\", function () { pm.response.to.be.json; });",
+              "pm.test(\"Deleted matching ID\", function () { pm.expect(pm.response.json().id).to.eql(Number(pm.collectionVariables.get(\"opportunity_1_id\"))); });"
+            ]
+          }
+        }
+      ],
+      "response": []
+    },
+    {
+      "name": "09 - Request deleted opportunity (404)",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{base_url}}/api/opportunities/{{opportunity_1_id}}",
+        "description": "\nExpected HTTP 404. Expected JSON: {\"error\": \"Opportunity not found.\"}"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"HTTP 404\", function () { pm.response.to.have.status(404); });",
+              "pm.test(\"JSON response\", function () { pm.response.to.be.json; });",
+              "pm.test(\"Not found message\", function () { pm.expect(pm.response.json().error).to.eql(\"Opportunity not found.\"); });"
+            ]
+          }
+        }
+      ],
+      "response": []
+    },
+    {
+      "name": "10 - Missing required fields (400)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{base_url}}/api/opportunities",
+        "description": "\nExpected HTTP 400. Expected JSON: {\"error\": \"Description is required.\"}",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"Incomplete request\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"HTTP 400\", function () { pm.response.to.have.status(400); });",
+              "pm.test(\"JSON response\", function () { pm.response.to.be.json; });",
+              "pm.test(\"Validation message\", function () { pm.expect(pm.response.json().error).to.include(\"required\"); });"
+            ]
+          }
+        }
+      ],
+      "response": []
+    },
+    {
+      "name": "11 - Negative positions (400)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{base_url}}/api/opportunities",
+        "description": "\nExpected HTTP 400. Expected JSON: {\"error\": \"Validation message describing the field.\"}",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"Network Traffic Analysis\",\n  \"description\": \"Analyze university network congestion using captured traffic.\",\n  \"research_area\": \"Computer Networks\",\n  \"faculty_name\": \"Dr. Example Faculty\",\n  \"department\": \"Computer Science\",\n  \"required_skills\": \"Python, TCP/IP, Wireshark\",\n  \"available_positions\": -1,\n  \"application_deadline\": \"2026-12-20\",\n  \"status\": \"Open\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"HTTP 400\", function () { pm.response.to.have.status(400); });",
+              "pm.test(\"JSON response\", function () { pm.response.to.be.json; });",
+              "pm.test(\"Error field\", function () { pm.expect(pm.response.json().error).to.be.a(\"string\"); });"
+            ]
+          }
+        }
+      ],
+      "response": []
+    },
+    {
+      "name": "12 - Invalid date (400)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{base_url}}/api/opportunities",
+        "description": "\nExpected HTTP 400. Expected JSON: {\"error\": \"Validation message describing the field.\"}",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"Network Traffic Analysis\",\n  \"description\": \"Analyze university network congestion using captured traffic.\",\n  \"research_area\": \"Computer Networks\",\n  \"faculty_name\": \"Dr. Example Faculty\",\n  \"department\": \"Computer Science\",\n  \"required_skills\": \"Python, TCP/IP, Wireshark\",\n  \"available_positions\": 2,\n  \"application_deadline\": \"2026-02-30\",\n  \"status\": \"Open\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"HTTP 400\", function () { pm.response.to.have.status(400); });",
+              "pm.test(\"JSON response\", function () { pm.response.to.be.json; });",
+              "pm.test(\"Error field\", function () { pm.expect(pm.response.json().error).to.be.a(\"string\"); });"
+            ]
+          }
+        }
+      ],
+      "response": []
+    },
+    {
+      "name": "13 - Invalid status (400)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{base_url}}/api/opportunities",
+        "description": "\nExpected HTTP 400. Expected JSON: {\"error\": \"Validation message describing the field.\"}",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"Network Traffic Analysis\",\n  \"description\": \"Analyze university network congestion using captured traffic.\",\n  \"research_area\": \"Computer Networks\",\n  \"faculty_name\": \"Dr. Example Faculty\",\n  \"department\": \"Computer Science\",\n  \"required_skills\": \"Python, TCP/IP, Wireshark\",\n  \"available_positions\": 2,\n  \"application_deadline\": \"2026-12-20\",\n  \"status\": \"Pending\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"HTTP 400\", function () { pm.response.to.have.status(400); });",
+              "pm.test(\"JSON response\", function () { pm.response.to.be.json; });",
+              "pm.test(\"Error field\", function () { pm.expect(pm.response.json().error).to.be.a(\"string\"); });"
+            ]
+          }
+        }
+      ],
+      "response": []
+    },
+    {
+      "name": "14 - Malformed JSON (400)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{base_url}}/api/opportunities",
+        "description": "\nExpected HTTP 400. Expected JSON: {\"error\": \"Invalid JSON. Check the request body syntax.\"}",
+        "body": {
+          "mode": "raw",
+          "raw": "{ \"title\": ",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"HTTP 400\", function () { pm.response.to.have.status(400); });",
+              "pm.test(\"JSON response\", function () { pm.response.to.be.json; });",
+              "pm.test(\"Safe invalid JSON\", function () { pm.expect(pm.response.json().error).to.include(\"Invalid JSON\"); });"
+            ]
+          }
+        }
+      ],
+      "response": []
+    }
+  ]
+}
