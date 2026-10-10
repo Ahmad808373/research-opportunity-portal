@@ -1,0 +1,3 @@
+GitHub branch and file write access verified through the connected account.
+This file was created during the assignment's permission check.
+No credentials are stored in this repository.
