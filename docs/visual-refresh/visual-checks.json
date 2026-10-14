@@ -1,0 +1,11 @@
+{
+  "checks": [
+    "No horizontal overflow at 320px",
+    "No horizontal overflow at 390px",
+    "No horizontal overflow at 768px",
+    "No horizontal overflow at 1024px",
+    "No horizontal overflow at 1440px",
+    "Create dialog fits mobile and Save remains reachable"
+  ],
+  "preview_records": "Three example records created through the live Flask/MySQL API in a disposable test database. These names are demonstration input, not claims about actual faculty."
+}

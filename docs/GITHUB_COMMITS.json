@@ -80,6 +80,15 @@
         "main"
       ],
       "verified": true
+    },
+    {
+      "message": "feat: refresh portal with forest green ivory design and research illustration",
+      "sha": "747107525c9b1141d48a5f6d573f5c5ec015d79a",
+      "branches": [
+        "main",
+        "development"
+      ],
+      "verified": true
     }
   ],
   "notes": "Each listed milestone was individually published and its remote head read back. Subsequent final verification commits are visible in GitHub history."

@@ -47,6 +47,11 @@ optional test tools, not application requirements.
 | `docs/TEST_REPORT.md` | Actual results and local verification procedure |
 | `docs/SUBMISSION.md` | Pending items and final ZIP instructions |
 
+The frontend was visually refreshed on 14 October 2026 with a forest-green and
+ivory theme, an inline research illustration, and improved cards and forms.
+See [visual refresh and installation notes](docs/VISUAL_REFRESH.md) for the latest
+executed UI checks and instructions for replacing an existing frontend folder.
+
 ## Windows 11 setup
 
 Install Python 3.12 with the Python launcher, MySQL Server 8.0.16+ and MySQL

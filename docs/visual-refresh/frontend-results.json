@@ -1,0 +1,21 @@
+{
+  "checks": [
+    "Empty database displayed from API",
+    "Empty required form prevented before POST",
+    "Negative positions blocked in frontend",
+    "Impossible deadline rejected by date input and required validation",
+    "Whitespace-only required field blocked",
+    "Create saved through API/MySQL; repeated submits made one POST",
+    "Single-record GET, full details, and safe HTML-like text",
+    "Edit updated stored record; zero positions accepted",
+    "Close PUT stored and displayed Closed",
+    "Reload retrieved persistent edited/closed record",
+    "390px mobile layout without horizontal overflow",
+    "Delete cancellation retained database record",
+    "Confirmed DELETE removed record and refreshed empty list",
+    "Actual stopped backend produced understandable frontend network error",
+    "Failed save retained form data and displayed error inside dialog",
+    "No uncaught browser JavaScript errors"
+  ],
+  "failures": []
+}
