@@ -28,7 +28,7 @@ optional test tools, not application requirements.
 
 | Location | Purpose |
 |---|---|
-| `backend/app.py` | Five REST endpoints, validation, HTTP responses; serves frontend |
+| `backend/portal_app.py` | Five REST endpoints, validation, HTTP responses; serves frontend |
 | `backend/db.py` | Read configuration; open/close MySQL connections |
 | `backend/requirements.txt` | Python dependencies |
 | `backend/.env.example` | Local configuration template with placeholders |
@@ -115,7 +115,7 @@ Do not put a real password in `.env.example`. The real `.env` is ignored by Git.
 ### 4. Run the application
 
 ```powershell
-.\.venv\Scripts\python.exe backend\app.py
+.\.venv\Scripts\python.exe backend\portal_app.py
 ```
 
 Leave that terminal running and open **http://127.0.0.1:5000/** in your browser.

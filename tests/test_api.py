@@ -50,7 +50,7 @@ class PortalAPITests(unittest.TestCase):
         env = dict(os.environ, PORT='5010')
         if db_port is not None:
             env['DB_PORT'] = str(db_port)
-        cls.server = subprocess.Popen([sys.executable, str(ROOT / 'backend' / 'app.py')],
+        cls.server = subprocess.Popen([sys.executable, str(ROOT / 'backend' / 'portal_app.py')],
                                       env=env, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
         for attempt in range(60):
             try:

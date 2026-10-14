@@ -45,7 +45,7 @@ saved in VIDEO_LINK.txt):
 $stage = Join-Path $env:TEMP ("portal-submission-" + [guid]::NewGuid().ToString())
 New-Item -ItemType Directory -Path $stage | Out-Null
 New-Item -ItemType Directory -Path "$stage\backend" | Out-Null
-Copy-Item backend\app.py,backend\db.py,backend\requirements.txt,backend\.env.example "$stage\backend"
+Copy-Item backend\portal_app.py,backend\db.py,backend\requirements.txt,backend\.env.example "$stage\backend"
 Copy-Item frontend,database,postman,docs -Destination $stage -Recurse
 New-Item -ItemType Directory -Path "$stage\tests" | Out-Null
 Copy-Item tests\test_api.py,tests\test_frontend.cjs "$stage\tests"

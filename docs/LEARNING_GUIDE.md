@@ -152,16 +152,16 @@ against accidental clicking. A failed save leaves form values intact for retryin
 
 | File/function | Responsibility |
 |---|---|
-| app.py / json_body | Check content type, JSON object, supported fields |
-| app.py / validate_opportunity | Check and clean all nine editable fields |
-| app.py / valid_id | Reject unsafe or out-of-range identifiers |
-| app.py / serialize | Convert a MySQL date to YYYY-MM-DD JSON text |
-| app.py / create_opportunity | INSERT, read saved row, commit, return 201 |
-| app.py / get_opportunities | SELECT all, return array |
-| app.py / get_opportunity | SELECT by ID, return full details or 404 |
-| app.py / update_opportunity | Read, merge, validate, UPDATE, commit |
-| app.py / delete_opportunity | DELETE, check whether a row was removed |
-| app.py / error handlers | Consistent safe 400/404/500 JSON responses |
+| portal_app.py / json_body | Check content type, JSON object, supported fields |
+| portal_app.py / validate_opportunity | Check and clean all nine editable fields |
+| portal_app.py / valid_id | Reject unsafe or out-of-range identifiers |
+| portal_app.py / serialize | Convert a MySQL date to YYYY-MM-DD JSON text |
+| portal_app.py / create_opportunity | INSERT, read saved row, commit, return 201 |
+| portal_app.py / get_opportunities | SELECT all, return array |
+| portal_app.py / get_opportunity | SELECT by ID, return full details or 404 |
+| portal_app.py / update_opportunity | Read, merge, validate, UPDATE, commit |
+| portal_app.py / delete_opportunity | DELETE, check whether a row was removed |
+| portal_app.py / error handlers | Consistent safe 400/404/500 JSON responses |
 | db.py / get_connection | Open and reuse the current request's connection |
 | db.py / close_connection | Close after the request, including failed requests |
 | script.js / api | Common fetch, timeout, and response-error handling |
