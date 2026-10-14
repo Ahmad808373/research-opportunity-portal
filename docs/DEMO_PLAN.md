@@ -1,6 +1,8 @@
 # Real demonstration recording: target 58 seconds
 
-The actual recording is pending. This is a plan, not a claim that a video exists.
+The student has supplied an actual recording, and the reviewed 59.80-second
+submission copy is included in the final ZIP. This page retains the preparation
+plan for reference; the final observations are in VERIFICATION.md.
 The PDF permits approximately one minute and explicitly says not to exceed one minute.
 
 ## Prepare before recording

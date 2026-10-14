@@ -98,3 +98,16 @@ deadline check. Already passing API/collection tests were not changed afterward.
 8. Optionally stop MySQL while Flask stays running: GET all should return JSON 500;
    restart MySQL and confirm normal behavior returns.
 9. Record the real workflow and Postman output according to DEMO_PLAN.md.
+
+
+## Final submission update - 14 October 2026
+
+The student supplied a real Windows screen recording showing the renamed
+portal_app.py entry point, frontend CRUD, 42 passed Postman GUI assertions, and
+a live 404 JSON response. A 59.80-second reviewed copy is included in the final ZIP.
+All API, exported collection, and browser tests were rerun successfully after
+the entry-point rename. See docs/submission-tests/RESULTS.md and its transcripts.
+The earlier "Not executed here" notes describe the original development run;
+they are superseded for the student's Windows/Postman demonstration and video.
+Historical screenshots remain in the GitHub repository. The final ZIP contains
+text/JSON evidence only and excludes screenshot files.

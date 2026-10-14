@@ -50,7 +50,7 @@ instructions. Status meanings: **Verified** = executed or directly confirmed;
 | Clear, simple responsive UI | Verified | Inspected 1366px/390px screenshots; no overflow |
 | Repeated submit protection | Verified | Two immediate form submits produced one POST |
 | Backend unavailability handled | Verified | Actual backend stopped after page load; Refresh/save error displayed |
-| Windows 11 local setup and UI smoke test | Implemented but not tested | README ready; application execution environment was Linux |
+| Windows 11 local setup and UI smoke test | Verified | Actual uploaded recording shows portal_app.py running, frontend CRUD, and Postman results on the student's Windows computer |
 
 ## GitHub
 
@@ -63,7 +63,7 @@ instructions. Status meanings: **Verified** = executed or directly confirmed;
 | Complete README/documentation online | Verified | Documentation commit 79cca366 published; README and required paths read back |
 | No credentials exposed | Verified | Tracked source review; placeholder .env.example; ignored .env/.venv |
 | Actual repository URL in README/submission | Verified | README and GITHUB_LINK.txt contain existing repository URL |
-| Instructor access at submission time | Pending | Public now; confirm still accessible when submitting |
+| Instructor access at final review | Verified | Public repository and required files fetched during final review; keep it public when handing in |
 
 Initial 403 write attempts failed, then were resolved by the user's permission
 change. They are not counted as successful pushes. Milestones were preserved
@@ -83,15 +83,15 @@ locally and then published separately in order. See GITHUB.md and GITHUB_COMMITS
 | 8. Invalid/missing data | Verified | 10, actual 400 validation body |
 | Collection exported with methods/URLs/headers/bodies/expected responses/tests/variables | Verified | Valid JSON file; all 14 scripts executed |
 | Collection execution | Verified | Newman: 14 requests, 42 assertions, zero failures |
-| Local Postman desktop visual demonstration | Pending | Same collection ready to import; desktop GUI was not executed here |
+| Local Postman desktop visual demonstration | Verified | Actual supplied Windows recording shows collection run, 42 passed, 0 failed, and live 404 response |
 
 ## Video
 
 | Requirement | Status | Evidence |
 |---|---|---|
-| Recording sequence covers running backend/frontend, create/read/update/close/delete, error, API requests/responses | Implemented but not tested | DEMO_PLAN.md, rehearsable 58-second plan |
-| Actual demonstration video or valid video link | Pending | No recording provided or fabricated |
-| Actual duration <=60 seconds | Pending | Verify exported recording duration |
+| Actual recording covers running backend/frontend, create/read/update/close/delete, error, API requests/responses | Verified | Uploaded real video visually reviewed across its full sequence; final 404 body remains visible |
+| Actual demonstration video | Verified | Student-supplied recording; reviewed copy included in final ZIP |
+| Actual duration <=60 seconds | Verified | ffprobe measures 59.800000 seconds for the submission copy; original 60.433300-second upload was preserved |
 
 ## Submission and original PDF instructions
 
@@ -100,14 +100,19 @@ locally and then published separately in order. See GITHUB.md and GITHUB_COMMITS
 | Complete frontend/backend source and schema | Verified | Working source; executed tests |
 | Exported collection and README setup/run instructions | Verified | Prepared real files; API collection executed |
 | Actual repository link included | Verified | GITHUB_LINK.txt and README |
-| Video/video link included | Pending | Await actual recording/link |
-| Exact P24 0000 NAME CLASS.zip filename | Pending | Need exact registration number, submission name, and class |
-| Final single submission ZIP | Pending | Working package only until video/naming/local demonstration complete |
-| No .env, virtual environments, tokens, unnecessary temporary files in working package | Verified | Actual archive inspected; final named submission still pending |
+| Video included | Verified | Reviewed actual MP4 is part of the final archive |
+| Exact P24 0000 NAME CLASS.zip filename | Verified | Filename constructed from the registration number, name, and section explicitly supplied by the student |
+| Final single submission ZIP | Verified | Named archive includes required source, schema, collection, README, actual repository URL, and reviewed MP4; archive contents/CRC checked |
+| No .env, virtual environments, tokens, unnecessary temporary files in final package | Verified | Explicit tracked-source allowlist and archive inspection; credentials template contains placeholders only |
 | Both frontend/backend and database CRUD | Verified | Full end-to-end executions |
-| Run using README on another Windows computer | Implemented but not tested | Exact-file Windows instructions; local install pending |
-| Individual assignment and originality | Pending | Student must understand/adapt the work and follow university assistance policy |
+| Run using README on another Windows computer | Implemented but not tested | Fresh machine installation was not independently executed; Windows instructions match the reviewed source and successful student recording |
+| Individual assignment and originality | Implemented but not tested | Project prepared for the named individual student; the student must understand and defend it under university rules |
 
-Do not label the assignment submission complete while pending items remain.
-TEST_REPORT.md and test-evidence contain the executed results; README and
-LEARNING_GUIDE.md explain the implementation in simple language.
+The technical submission files are prepared. Final renamed-entry-point executions
+are recorded in docs/submission-tests. TEST_REPORT.md retains the original
+development-test history. The supplied video confirms the student's Windows
+frontend and Postman GUI demonstration. A fresh installation on an unrelated
+computer and the student's academic defense are outside this verification.
+
+The final archive includes text/JSON test evidence. Historical browser screenshots
+remain in GitHub; they are not included in the final submission ZIP.

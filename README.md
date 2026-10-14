@@ -45,7 +45,7 @@ optional test tools, not application requirements.
 | `docs/DEMO_PLAN.md` | Recording preparation and 58-second sequence |
 | `docs/GITHUB.md` | Publication steps and permission limitation |
 | `docs/TEST_REPORT.md` | Actual results and local verification procedure |
-| `docs/SUBMISSION.md` | Pending items and final ZIP instructions |
+| `docs/SUBMISSION.md` | Final ZIP contents and submission instructions |
 
 The frontend was visually refreshed on 14 October 2026 with a forest-green and
 ivory theme, an inline research illustration, and improved cards and forms.
@@ -218,8 +218,10 @@ supporting error case.
 
 Executed here: 13 live HTTP/MySQL test groups; 14 Postman collection requests with
 42 passing assertions via Newman; 16 browser checks; actual MySQL restart persistence.
-See [test report](docs/TEST_REPORT.md). Postman desktop GUI and Windows installation
-were not executed here; complete them locally. Application tests ran on Linux.
+See [test report](docs/TEST_REPORT.md). The development tests ran on Linux. The student
+then demonstrated the real application and Postman desktop on Windows in the
+submitted video, including 42 passing GUI tests. Fresh tests after renaming the
+entry point to portal_app.py also passed; see docs/submission-tests/RESULTS.md.
 
 Optional Python suite: it clears its target table and refuses DB_NAME values that
 do not end in `_test`. Never target your main database. In a separate Workbench
@@ -268,7 +270,12 @@ and live database records are not packaged. MySQL stores data separately from Fl
 | Saved but refresh failed | Press Refresh; do not resubmit the saved change |
 | .env changes seem ignored | Remove overriding DB_* or PORT environment variables and restart |
 
-Read [the learning guide](docs/LEARNING_GUIDE.md), follow [the recording plan](docs/DEMO_PLAN.md),
-and check [submission instructions](docs/SUBMISSION.md). The working package is
-**not the final named submission**: local Windows/Postman GUI demonstration,
-exact personal filename details, and a real recording remain pending.
+Read [the learning guide](docs/LEARNING_GUIDE.md), [final verification](docs/VERIFICATION.md),
+and [submission instructions](docs/SUBMISSION.md). The final named submission ZIP
+contains the source, SQL schema, exported Postman collection, this README, actual
+GitHub link, submission details, and the reviewed demonstration video. The video
+was shortened from 60.43 seconds to 59.80 seconds by removing only the final tail;
+all required demonstrations remain visible. Your original upload was preserved.
+
+The backend entry point is **backend/portal_app.py**, matching the recorded version.
+Configure your own .env locally; no real password or virtual environment is included.

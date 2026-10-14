@@ -89,6 +89,15 @@
         "development"
       ],
       "verified": true
+    },
+    {
+      "message": "refactor: use portal_app.py entry point throughout project",
+      "sha": "35ed4a639004763e4db5a3e8203e83f487e83229",
+      "branches": [
+        "main",
+        "development"
+      ],
+      "verified": true
     }
   ],
   "notes": "Each listed milestone was individually published and its remote head read back. Subsequent final verification commits are visible in GitHub history."
