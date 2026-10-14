@@ -76,8 +76,9 @@ function renderList() {
     viewButton.type = 'button';
     viewButton.setAttribute('aria-label', 'View details: ' + opportunity.title);
     viewButton.addEventListener('click', () => selectOpportunity(opportunity.id));
-    bottom.append(element('span', opportunity.available_positions + ' positions · Deadline ' + opportunity.application_deadline), viewButton);
+    bottom.append(element('span', opportunity.available_positions + ' positions · Deadline ' + opportunity.application_deadline, 'card-deadline'), viewButton);
     card.append(top, element('h3', opportunity.title),
+      element('p', opportunity.description, 'card-description'),
       element('p', opportunity.faculty_name + ' · ' + opportunity.department, 'card-meta'), bottom);
     list.append(card);
   }
@@ -86,7 +87,12 @@ function renderList() {
 function clearDetails() {
   selectedId = null;
   selectedOpportunity = null;
-  details.replaceChildren(element('p', 'Select an opportunity to view its full details.', 'empty'));
+  const empty = element('div', '', 'detail-empty');
+  const symbol = element('span', '↗', 'empty-symbol');
+  symbol.setAttribute('aria-hidden', 'true');
+  empty.append(symbol, element('h3', 'A closer look'),
+    element('p', 'Select an opportunity to view its full details.'));
+  details.replaceChildren(empty);
 }
 
 function actionButton(text, handler, className = 'quiet') {
